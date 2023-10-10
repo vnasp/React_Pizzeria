@@ -3,15 +3,16 @@ import Menu from "../components/Menu"
 
 const HomePage = () => {
     return (
-        <> <div>
-            <h1>Titulo con portada</h1>
-            <h3>Bajada de título</h3>
-        </div>
-            <Container>
-                <Row>
-                    <Col><Menu /></Col>
-                </Row>
-            </Container>
+        <> <Container>
+            <Row>
+                <Col> <h1>¡Pizzería Mamma Mia!</h1>
+                    <h3>¡Tenemos las mejores pizzas que podrás encontrar!</h3></Col>
+            </Row>
+
+            <Row>
+                <Col><Menu /></Col>
+            </Row>
+        </Container>
         </>
     )
 }

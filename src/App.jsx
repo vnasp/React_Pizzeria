@@ -2,8 +2,9 @@ import './App.css'
 import { Route, Routes } from "react-router-dom"
 import Navigation from "./components/Navigation"
 import HomePage from "./views/HomePage"
-import PizzaPage from "./views/PizzaPage"
+import MenuPage from "./views/MenuPage"
 import CartPage from "./views/CartPage"
+import PizzaPage from "./views/PizzaPage"
 import NotFound from "./views/NotFound"
 
 const App = () => {
@@ -16,10 +17,14 @@ const App = () => {
           element={<HomePage />}
         />
         <Route path="/pizzas"
-          element={<PizzaPage />} />
+          element={<MenuPage />} />
         <Route
           path="/cart"
           element={<CartPage />}
+        />
+        <Route
+          path="/pizza/:name"
+          element={<PizzaPage />}
         />
         <Route
           path="*"

@@ -25,15 +25,19 @@ const Navigation = () => {
                         <NavLink
                             to="/mamapuntos"
                             className={setActiveClass}
-                        > ⭐ Hazme Click
+                        > 🧑🏼‍🍳 MamaPuntos
                         </NavLink>
                         <NavLink
                             to="/locales"
                             className={setActiveClass}
-                        > ⛺ Locales
+                        > ⛺ Hazme Click
                         </NavLink>
                     </div>
-                    <div className="bg-warning bg-gradient rounded shadow-sm w-10 p-3">🛒 $0</div>
+                    <div className="bg-warning bg-gradient rounded shadow-sm w-10 p-3">
+                    <NavLink
+                            to="/carrito"
+                        > 🛒 $0
+                        </NavLink></div>
             </Navbar>
         </>
     )

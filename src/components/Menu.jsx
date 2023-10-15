@@ -8,6 +8,7 @@ const Menu = () => {
     const { pizzas } = useContext(DataContext)
     const { CLP } = useContext(DataContext)
     const [pizzaSelected, setPizzaSelected] = useState('')
+    const [cart, setCart] = useState({});
     const navigate = useNavigate()
 
     const handleSubmit = (e) => {
@@ -16,7 +17,9 @@ const Menu = () => {
 
     }
     //falta agregar la funcionalidad al addToCart
-    const addToCart = (e) => {
+    const addToCart = () => {{
+            setCart(pizza.id, 1);
+          }
     }
     return (
         <><Form onSubmit={handleSubmit}>

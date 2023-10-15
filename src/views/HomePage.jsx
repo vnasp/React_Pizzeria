@@ -4,7 +4,7 @@ import Menu from "../components/Menu"
 const HomePage = () => {
     return (
         <> <Container>
-            <Row>
+            <Row className="mb-3">
                 <Col className="text-center"> <h1>¡Pizzería Mamma Mia!</h1>
                     <h3>¡Tenemos las mejores pizzas que podrás encontrar!</h3></Col>
             </Row>

@@ -8,18 +8,16 @@ const Menu = () => {
     const { pizzas } = useContext(DataContext)
     const { CLP } = useContext(DataContext)
     const [pizzaSelected, setPizzaSelected] = useState('')
-    const [cart, setCart] = useState({});
     const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault()
         navigate(`/pizza/${pizzaSelected}/`)
-
     }
-    //falta agregar la funcionalidad al addToCart
-    const addToCart = () => {{
-            setCart(pizza.id, 1);
-          }
+    
+    const addToCart = () => {
+        //acá tengo que agregar la función
+        navigate(`/carrito/`)
     }
     return (
         <><Form onSubmit={handleSubmit}>
@@ -47,7 +45,7 @@ const Menu = () => {
                             </Card.Body>
                             <Card.Body className="d-flex justify-content-around">
                                 <Button className="bg-primary" type="submit" value={pizza.id} onClick={({ target }) => setPizzaSelected(target.value)}>Ver Más 👀</Button>
-                                <Button className="bg-warning border-0 text-black" onClick={addToCart}>Añadir 🛒</Button>
+                                <Button className="bg-warning border-0 text-black" type="submit" onClick={addToCart}>Añadir 🛒</Button>
                             </Card.Body>
                         </Card>
                     </Col>

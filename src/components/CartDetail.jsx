@@ -4,9 +4,8 @@ import { DataContext } from "../context/DataContext"
 
 const CartDetail = () => {
     const { CLP } = useContext(DataContext)
-    const cart_price = 1000
-    const cart_qty = 2
-    const cart_total = cart_price * cart_qty
+    const { cart } = useContext(DataContext)
+    const { cart_total } = useContext(DataContext)
     const cart_mamapuntos = cart_total / 100
 
     return (
@@ -25,12 +24,12 @@ const CartDetail = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><Image src="" /> </td>
-                                <td> nombre de la pizza desde objeto </td>
-                                <td>{CLP.format(cart_price)}</td>
+                            <tr className="align-middle">
+                                <td><Image src={cart.img} className="img-thumbnail"/> </td>
+                                <td className="text-capitalize">{cart.name}</td>
+                                <td>{CLP.format(cart.price)}</td>
                                 <td><Button className="bg-primary" type="button">-</Button></td>
-                                <td className="text-center fw-bolder">{cart_qty}</td>
+                                <td className="text-center fw-bolder">{cart.qty}</td>
                                 <td><Button className="bg-warning border-0 text-black" type="button">+</Button></td>
                             </tr>
                         </tbody>

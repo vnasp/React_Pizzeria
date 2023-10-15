@@ -1,8 +1,20 @@
-import { Container, Navbar,Image } from "react-bootstrap"
+import { useContext } from "react"
+import { Navbar,Image } from "react-bootstrap"
 import { NavLink } from "react-router-dom"
+import { DataContext } from "../context/DataContext"
 
 const Navigation = () => {
     const setActiveClass = ({ isActive }) => (isActive ? "active" : undefined)
+    const { cart_total } = useContext(DataContext)
+    const { CLP } = useContext(DataContext)
+
+    let total
+    if ( cart_total > 0) {
+        total =  CLP.format(cart_total)
+    }
+    else {
+        total = CLP.format(0)
+    }
 
     return (
         <>
@@ -36,7 +48,7 @@ const Navigation = () => {
                     <div className="bg-warning bg-gradient rounded shadow-sm w-10 p-3">
                     <NavLink
                             to="/carrito"
-                        > 🛒 $0
+                        > 🛒 {total}
                         </NavLink></div>
             </Navbar>
         </>

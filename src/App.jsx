@@ -23,7 +23,7 @@ const App = () => {
           element={<CartPage />}
         />
         <Route
-          path="/pizza/:name"
+          path="/pizza/:id"
           element={<PizzaPage />}
         />
         <Route

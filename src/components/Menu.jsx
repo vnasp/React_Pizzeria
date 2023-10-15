@@ -1,4 +1,4 @@
-import { useContext,useState } from "react"
+import { useContext, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { Form, Col, Row, Card, ListGroup, Button } from "react-bootstrap"
 import { DataContext } from "../context/DataContext"
@@ -6,20 +6,21 @@ import unidecode from "unidecode"
 
 const Menu = () => {
     const { pizzas } = useContext(DataContext)
-    const [ pizzaSelected, setPizzaSelected ] = useState('')
+    const { CLP } = useContext(DataContext)
+    const [pizzaSelected, setPizzaSelected] = useState('')
     const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        navigate(`/pizza/${pizzaSelected}`)
-    }
+        navigate(`/pizza/${pizzaSelected}/`)
 
+    }
     //falta agregar la funcionalidad al addToCart
     const addToCart = (e) => {
     }
     return (
         <><Form onSubmit={handleSubmit}>
-            <Row xs={1} md={4} className="g-4">    
+            <Row xs={1} md={4} className="g-4">
                 {pizzas.map((pizza) => (
                     <Col key={pizza.id}>
                         <Card>
@@ -38,19 +39,19 @@ const Menu = () => {
                                 </ListGroup>
                             </Card.Body>
                             <Card.Body>
-                                <Card.Text className="fw-bolder fs-2 text-center">{new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP' }).format(pizza.price)}
+                                <Card.Text className="fw-bolder fs-2 text-center">{CLP.format(pizza.price)}
                                 </Card.Text>
                             </Card.Body>
-                            <Card.Body className="d-flex justify-content-around">                          
-                                <Button className="bg-primary" type="submit" value={pizza.name} onClick={({ target }) => setPizzaSelected(unidecode(target.value))}>Ver Más 👀</Button>
+                            <Card.Body className="d-flex justify-content-around">
+                                <Button className="bg-primary" type="submit" value={pizza.id} onClick={({ target }) => setPizzaSelected(target.value)}>Ver Más 👀</Button>
                                 <Button className="bg-warning border-0 text-black" onClick={addToCart}>Añadir 🛒</Button>
                             </Card.Body>
                         </Card>
                     </Col>
 
                 ))}
-            
-        </Row>
+
+            </Row>
         </Form>
         </>
     )

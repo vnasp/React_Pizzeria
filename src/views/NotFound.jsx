@@ -1,13 +1,22 @@
-import { Image } from "react-bootstrap"
+import { Container, Row, Col, Image } from "react-bootstrap"
 
 const NotFound = () => {
   return (
-    <><div className="m-3 p-3 text-center">
-      <h2>¡Alguien se ha comido esta página!</h2>
-      <h3>Prueba ingresando desde el inicio a tu pizza favorita</h3>
-      </div>
-      <div className="text-center"><Image src="../src/assets/img/notfound.png" /></div>
-      </>
+    <>
+      <Container className="p-container">
+        <Row className="mb-3">
+          <Col className="text-center">
+            <h1>¡Alguien se ha comido esta página!</h1>
+            <h3>Prueba ingresando desde el inicio a tu pizza favorita</h3>
+          </Col>
+        </Row>
+        <Row>
+          <Col className="text-center">
+            <Image src="../src/assets/img/notfound.png" className="w-25" />
+          </Col>
+        </Row>
+      </Container>
+    </>
   )
 }
 

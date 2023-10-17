@@ -5,21 +5,12 @@ import { DataContext } from "../context/DataContext"
 
 const Navigation = () => {
     const setActiveClass = ({ isActive }) => (isActive ? "active" : undefined)
-    const { cart_total } = useContext(DataContext)
-    const { CLP } = useContext(DataContext)
-
-    let total
-    if ( cart_total > 0) {
-        total =  CLP.format(cart_total)
-    }
-    else {
-        total = CLP.format(0)
-    }
+    const { total } = useContext(DataContext)
 
     return (
         <>
             <Navbar
-                className="d-flex flex-row justify-content-between"
+                className="d-flex justify-content-between fixed-top bg-white py-0 px-3 "
                 variant="light"
             >
                     <div className="p-3"><Navbar.Brand><Image src="../src/assets/img/logo.png"/><span className="logo-text">PIZZAS</span></Navbar.Brand></div>

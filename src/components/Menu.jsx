@@ -7,6 +7,7 @@ import unidecode from "unidecode"
 const Menu = () => {
     const { pizzas } = useContext(DataContext)
     const { CLP } = useContext(DataContext)
+    const { addToCart } = useContext(DataContext)
     const [pizzaSelected, setPizzaSelected] = useState('')
     const navigate = useNavigate()
 
@@ -14,13 +15,9 @@ const Menu = () => {
         e.preventDefault()
         navigate(`/pizza/${pizzaSelected}/`)
     }
-    
-    const addToCart = () => {
-        //acá tengo que agregar la función
-        navigate(`/carrito/`)
-    }
+
     return (
-        <><Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}>
             <Row xs={1} md={4} className="g-4">
                 {pizzas.map((pizza) => (
                     <Col key={pizza.id}>
@@ -45,16 +42,14 @@ const Menu = () => {
                             </Card.Body>
                             <Card.Body className="d-flex justify-content-around">
                                 <Button className="bg-primary" type="submit" value={pizza.id} onClick={({ target }) => setPizzaSelected(target.value)}>Ver Más 👀</Button>
-                                <Button className="bg-warning border-0 text-black" type="submit" onClick={addToCart}>Añadir 🛒</Button>
+                                <Button className="bg-warning border-0 text-black" type="button" value={pizza.id} onClick={(e) => addToCart(e,'value')}>Añadir 🛒</Button>
                             </Card.Body>
                         </Card>
                     </Col>
 
                 ))}
-
             </Row>
         </Form>
-        </>
     )
 }
 

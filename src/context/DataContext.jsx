@@ -6,20 +6,39 @@ const DataProvider = ({ children }) => {
     const CLP = new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP' })
     const [pizzas, setPizzas] = useState([])
     const [cart, setCart] = useState([])
-    const cart_total = cart.price * cart.qty
+    const [ total, setTotal ] = useState(0)
 
-    const getPizzas = async () => {
-        const response = await fetch(API_URL)
-        const data = await response.json()
-        setPizzas(data)
+    try {
+        const getPizzas = async () => {
+            const response = await fetch(API_URL)
+            if (response.status != 200) {
+                throw new Error
+            }
+            const data = await response.json()
+            setPizzas(data)
+        }
+        useEffect(() => {
+            getPizzas()
+        }, [])
     }
-    useEffect(() => {
-        getPizzas()
-    }, [])
+    catch (Error) {
+        alert({ Error })
+    }
 
+    const addToCart = (e) => {
+        const pizzaIndex = pizzas.findIndex( pizza => {
+            return pizza.id === e.target.value})
+        setCart([...cart, {
+            id: pizzas[pizzaIndex].id,
+            img: pizzas[pizzaIndex].img,
+            name: pizzas[pizzaIndex].name,
+            price: pizzas[pizzaIndex].price,
+            qty: 1,
+        }])
+    }
 
     return (
-        <DataContext.Provider value={{ pizzas, setPizzas, cart, setCart, cart_total, CLP }}>
+        <DataContext.Provider value={{ pizzas, setPizzas, addToCart, cart, setCart, total, setTotal, CLP }}>
             {children}
         </DataContext.Provider>
     )

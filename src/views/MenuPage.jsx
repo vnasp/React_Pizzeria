@@ -1,5 +1,5 @@
 import { Row, Col, Container } from "react-bootstrap"
-import Menu from "../components/Menu"
+import PizzaMenu from "../components/PizzaMenu"
 
 const PizzaPage = () => {
     return (
@@ -10,7 +10,7 @@ const PizzaPage = () => {
                     <h3>Pide ahora y disfruta de las mejores pizzas artesanales</h3>
                 </Col>
             </Row>
-            <Menu />
+            <PizzaMenu />
         </Container>
     )
 }

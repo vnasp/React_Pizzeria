@@ -5,6 +5,7 @@ import { DataContext } from "../context/DataContext"
 
 const Navigation = () => {
     const setActiveClass = ({ isActive }) => (isActive ? "active" : undefined)
+    const { CLP } = useContext(DataContext)
     const { total } = useContext(DataContext)
 
     return (
@@ -30,16 +31,11 @@ const Navigation = () => {
                             className={setActiveClass}
                         > 🧑🏼‍🍳 MamaPuntos
                         </NavLink>
-                        <NavLink
-                            to="/locales"
-                            className={setActiveClass}
-                        > ⛺ Hazme Click
-                        </NavLink>
                     </div>
                     <div className="bg-warning bg-gradient rounded shadow-sm w-10 p-3">
                     <NavLink
                             to="/carrito"
-                        > 🛒 {total}
+                        > 🛒 {CLP.format(total)}
                         </NavLink></div>
             </Navbar>
         </>

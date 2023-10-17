@@ -2,9 +2,8 @@ import { useContext, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { Form, Col, Row, Card, ListGroup, Button } from "react-bootstrap"
 import { DataContext } from "../context/DataContext"
-import unidecode from "unidecode"
 
-const Menu = () => {
+const PizzaMenu = () => {
     const { pizzas } = useContext(DataContext)
     const { CLP } = useContext(DataContext)
     const { addToCart } = useContext(DataContext)
@@ -53,4 +52,4 @@ const Menu = () => {
     )
 }
 
-export default Menu
+export default PizzaMenu

@@ -5,25 +5,28 @@ import { DataContext } from "../context/DataContext"
 const CartDetail = () => {
     const { CLP } = useContext(DataContext)
     const { cart, setCart } = useContext(DataContext)
+    const { cartFilter } = useContext(DataContext)
     const { total } = useContext(DataContext)
     const cart_mamapuntos = Math.trunc(total / 100)
 
     const incrementQty = (e) => {
-        const cartIndex = cart.findIndex( item => {
-            return item.id === e.target.value})
-        let updateCart = [...cart]
-        updateCart[cartIndex] = {...updateCart[cartIndex], qty: updateCart[cartIndex].qty + 1}
+        const cartIndex = cart.findIndex(item => {
+            return item.id === e.target.value
+        })
+        const updateCart = [...cart]
+        updateCart[cartIndex] = { ...updateCart[cartIndex], qty: updateCart[cartIndex].qty + 1 }
         setCart(updateCart)
     }
 
     const decrementQty = (e) => {
-        const cartIndex = cart.findIndex( item => {
-            return item.id === e.target.value})
-        let updateCart = [...cart]
-        updateCart[cartIndex] = {...updateCart[cartIndex], qty: updateCart[cartIndex].qty -1}
+        const cartIndex = cart.findIndex(item => {
+            return item.id === e.target.value
+        })
+        const updateCart = [...cart]
+        updateCart[cartIndex] = { ...updateCart[cartIndex], qty: updateCart[cartIndex].qty - 1 }
+        if (updateCart[cartIndex].qty <= 0) { updateCart[cartIndex].qty = 0 }
         setCart(updateCart)
-        }
-
+    }
 
     return (
         <>
@@ -41,14 +44,14 @@ const CartDetail = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {cart.map((item) => (
+                            {cartFilter.map((item) => (
                                 <tr className="align-middle" key={item.id}>
                                     <td><Image src={item.img} className="img-thumbnail" /> </td>
                                     <td className="text-capitalize">{item.name}</td>
                                     <td>{CLP.format(item.price * item.qty)}</td>
-                                    <td><Button className="bg-primary" type="button" value={item.id} onClick={(e) => decrementQty(e,'value')}>-</Button></td>
+                                    <td><Button className="bg-primary" type="button" value={item.id} onClick={(e) => decrementQty(e, 'value')}>-</Button></td>
                                     <td className="text-center fw-bolder">{item.qty}</td>
-                                    <td><Button className="bg-warning border-0 text-black" type="button" value={item.id} onClick={(e) => incrementQty(e,'value')}>+</Button></td>
+                                    <td><Button className="bg-warning border-0 text-black" type="button" value={item.id} onClick={(e) => incrementQty(e, 'value')}>+</Button></td>
                                 </tr>
                             ))}
                         </tbody>

@@ -11,7 +11,7 @@ const Navigation = () => {
     return (
         <>
             <Navbar
-                className="d-flex justify-content-between fixed-top bg-white py-0 px-3 "
+                className="d-flex justify-content-between fixed-top bg-custom py-0 px-3 "
                 variant="light"
             >
                     <div className="p-3"><Navbar.Brand><Image src="../src/assets/img/logo.png"/><span className="logo-text">PIZZAS</span></Navbar.Brand></div>

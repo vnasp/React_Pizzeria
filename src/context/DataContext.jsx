@@ -6,6 +6,8 @@ const DataProvider = ({ children }) => {
     const CLP = new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP' })
     const [pizzas, setPizzas] = useState([])
     const [cart, setCart] = useState([])
+    const cartFilter = cart.filter((item) => item.qty > 0)
+
 
     try {
         const getPizzas = async () => {
@@ -39,7 +41,7 @@ const DataProvider = ({ children }) => {
     const total = cart.reduce((acumulador, actual) => acumulador + (actual.price*actual.qty),0)
 
     return (
-        <DataContext.Provider value={{ pizzas, setPizzas, addToCart, cart, setCart, total, CLP }}>
+        <DataContext.Provider value={{ pizzas, setPizzas, addToCart, cartFilter, cart, setCart, total, CLP }}>
             {children}
         </DataContext.Provider>
     )

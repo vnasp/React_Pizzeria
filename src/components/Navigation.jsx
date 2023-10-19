@@ -4,9 +4,8 @@ import { NavLink } from "react-router-dom"
 import { DataContext } from "../context/DataContext"
 
 const Navigation = () => {
+    const { CLP, total } = useContext(DataContext)
     const setActiveClass = ({ isActive }) => (isActive ? "active" : undefined)
-    const { CLP } = useContext(DataContext)
-    const { total } = useContext(DataContext)
 
     return (
         <>

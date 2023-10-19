@@ -4,9 +4,7 @@ import { Col, Row, Image, Button } from "react-bootstrap"
 import { DataContext } from "../context/DataContext"
 
 const PizzaCard = () => {
-    const { pizzas } = useContext(DataContext)
-    const { addToCart } = useContext(DataContext)
-    const { CLP } = useContext(DataContext)
+    const { pizzas, addToCart, CLP } = useContext(DataContext)
     const { id } = useParams()
 
     const pizzaIndex = pizzas.findIndex(pizza => {

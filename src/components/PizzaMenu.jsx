@@ -4,9 +4,7 @@ import { Form, Col, Row, Card, ListGroup, Button } from "react-bootstrap"
 import { DataContext } from "../context/DataContext"
 
 const PizzaMenu = () => {
-    const { pizzas } = useContext(DataContext)
-    const { CLP } = useContext(DataContext)
-    const { addToCart } = useContext(DataContext)
+    const { pizzas, addToCart, CLP } = useContext(DataContext)
     const [pizzaSelected, setPizzaSelected] = useState('')
     const navigate = useNavigate()
 
@@ -28,27 +26,26 @@ const PizzaMenu = () => {
                             </Card.Body>
                             <Card.Body className="text-left border-bottom">
                                 <Card.Subtitle>Ingredientes:</Card.Subtitle>
-                                <ListGroup className="text-capitalize border-0">
-                                    <ListGroup.Item className="border-0">🥓 {pizza.ingredients[0]} </ListGroup.Item>
-                                    <ListGroup.Item className="border-0">🍅 {pizza.ingredients[1]} </ListGroup.Item>
-                                    <ListGroup.Item className="border-0">🍕 {pizza.ingredients[2]} </ListGroup.Item>
-                                    <ListGroup.Item className="border-0">🍕 {pizza.ingredients[3]} </ListGroup.Item>
-                                </ListGroup>
-                            </Card.Body>
-                            <Card.Body>
-                                <Card.Text className="fw-bolder fs-2 text-center">{CLP.format(pizza.price)}
-                                </Card.Text>
-                            </Card.Body>
-                            <Card.Body className="d-flex justify-content-around">
-                                <Button className="bg-primary" type="submit" value={pizza.id} onClick={({ target }) => setPizzaSelected(target.value)}>Ver Más 👀</Button>
-                                <Button className="bg-warning border-0 text-black" type="button" value={pizza.id} onClick={(e) => addToCart(e,'value')}>Añadir 🛒</Button>
-                            </Card.Body>
-                        </Card>
+                            <ListGroup className="text-capitalize border-0">
+                                    {pizza.ingredients.map((ingredient, index) => (
+                                    <ListGroup.Item className="border-0" key={index}> 🍕{ingredient}</ListGroup.Item>
+                                    ))}
+                            </ListGroup>
+                        </Card.Body>
+                        <Card.Body>
+                            <Card.Text className="fw-bolder fs-2 text-center">{CLP.format(pizza.price)}
+                            </Card.Text>
+                        </Card.Body>
+                        <Card.Body className="d-flex justify-content-around">
+                            <Button className="bg-primary" type="submit" value={pizza.id} onClick={({ target }) => setPizzaSelected(target.value)}>Ver Más 👀</Button>
+                            <Button className="bg-warning border-0 text-black" type="button" value={pizza.id} onClick={(e) => addToCart(e, 'value')}>Añadir 🛒</Button>
+                        </Card.Body>
+                    </Card>
                     </Col>
 
                 ))}
-            </Row>
-        </Form>
+        </Row>
+        </Form >
     )
 }
 

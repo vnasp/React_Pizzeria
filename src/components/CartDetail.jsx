@@ -3,11 +3,9 @@ import { Row, Table, Image, Button, Col } from "react-bootstrap"
 import { DataContext } from "../context/DataContext"
 
 const CartDetail = () => {
-    const { CLP } = useContext(DataContext)
-    const { cart, setCart } = useContext(DataContext)
-    const { cartFilter } = useContext(DataContext)
-    const { total } = useContext(DataContext)
+    const { CLP, cart, total, setCart, cartFilter } = useContext(DataContext)
     const cart_mamapuntos = Math.trunc(total / 100)
+
 
     const incrementQty = (e) => {
         const cartIndex = cart.findIndex(item => {

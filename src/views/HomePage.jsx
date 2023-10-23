@@ -20,7 +20,6 @@ const HomePage = () => {
 
                 </Col>
             </Row>
-
             <PizzaMenu />
         </Container>
         </>

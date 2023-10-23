@@ -11,7 +11,7 @@ const CartEmpty = () => {
             </Row>
             <Row className="border rounded bg-white text-center">
                 <Col>
-                    <p className="pt-2">Usa el cupón 🏷️ <span className="text-primary fw-bolder">MEDIOHAMBRE</span> y obtén un 10% de descuento en tu compra.</p>
+                    <p className="pt-2">Usa el cupón 🏷️ <span className="text-primary fw-bolder">TENGOHAMBRE</span> y obtén un 10% de descuento en tu compra.</p>
                 </Col>
             </Row>
         </>

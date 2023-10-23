@@ -1,11 +1,11 @@
-import { useContext } from "react"
+import { useContext,useRef } from "react"
 import { Row, Col, Table, Image, Button, Form } from "react-bootstrap"
 import { DataContext } from "../context/DataContext"
 
 const CartDetail = () => {
   const { CLP, cart, total, setCart, cartFilter, coupon, setCoupon } = useContext(DataContext)
   const cart_mamapuntos = Math.trunc(total / 100)
-
+  const inputRef = useRef(null);
 
   const incrementQty = (e) => {
     const cartIndex = cart.findIndex(item => {
@@ -26,11 +26,12 @@ const CartDetail = () => {
     setCart(updateCart)
   }
 
-  const handleClick = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
   }
-  const handleChange = (e) => {
-    setCoupon(e.target.value)
+  const handleClick= () => {
+    setCoupon(inputRef.current.value)
+    inputRef.reset()
   }
 
   return (
@@ -65,17 +66,17 @@ const CartDetail = () => {
         <Col className="col-1 border-0"></Col>
         <Col className="col-3 p-3 border rounded bg-white text-center">
           <div className="fw-bolder me-3 pb-3 border-bottom">
-          
+            <Form onSubmit={handleSubmit}>
               <h5>Cupón de Descuento</h5>
-              <input type="text" className="me-2" style={{ width: '50%' }} onChange={handleChange}></input>
-              <Button className="bg-grey border-0" type="button" onClick={handleClick}>Canjear</Button>
-          
+              <input ref={inputRef} type="text" className="me-2" style={{ width: '50%' }}></input>
+              <Button className="bg-grey border-0" onClick={handleClick}>Canjear</Button>
+            </Form>
           </div>
           <div className="fw-bolder fs-2 mb-3 text-center">Total: {CLP.format(total)}</div>
           <div className="text-center"><Button className="bg-success border-0" type="button" href="#">Ir a pagar</Button></div>
         </Col>
       </Row>
-      <Row className="border rounded bg-white align-items-center justify-content-center">
+      <Row className="border rounded bg-white text-center">
         <Col className="col-12 p-3 fw-bolder">
           ¡Con esta compra acumularás {cart_mamapuntos} 🧑🏼‍🍳 MamaPuntos!
         </Col>

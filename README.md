@@ -1,6 +1,9 @@
-# Pizzeria Mamma Mia
-**Prueba Módulo React II**
+# Pizzeria Mamma Mia 🍕
 
-- React Router (NavLink, useNavigate, useParams)
-- Context API para almacenar y modificar el estado global
-- Boostrap y CSS personalizado
+* Sitio Web con carrito de compra, cupón de descuento y temático
+* React (useState, useRef)
+* React Router (NavLink, useNavigate, useParams)
+* React Context API (useContext)
+* Javascript
+* Consumo de API JSON
+* Boostrap y CSS personalizado

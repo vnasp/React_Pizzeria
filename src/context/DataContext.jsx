@@ -52,7 +52,7 @@ const DataProvider = ({ children }) => {
     const cartFilter = cart.filter((item) => item.qty > 0)
 
     let discount
-    if (coupon.toLowerCase() == "tengohambre") {
+    if (coupon == "tengohambre") {
       discount = 0.9
     }
     else {

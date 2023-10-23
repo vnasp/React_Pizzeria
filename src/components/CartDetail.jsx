@@ -30,7 +30,7 @@ const CartDetail = () => {
     e.preventDefault()
   }
   const handleClick= () => {
-    setCoupon(inputRef.current.value)
+    setCoupon(inputRef.current.value.toLowerCase())
     inputRef.reset()
   }
 

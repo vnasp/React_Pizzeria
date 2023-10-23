@@ -13,7 +13,7 @@ const Navigation = () => {
                 className="d-flex justify-content-between fixed-top bg-custom py-0 px-3 "
                 variant="light"
             >
-                    <div className="p-3"><Navbar.Brand><Image src="../src/assets/img/logo.png"/><span className="logo-text">PIZZAS</span></Navbar.Brand></div>
+                    <div className="p-3"><Navbar.Brand><Image src="../assets/img/logo.png"/><span className="logo-text">PIZZAS</span></Navbar.Brand></div>
                     <div className="d-flex flex-row justify-content-around bg-white rounded shadow-sm w-70 p-3">
                         <NavLink
                             to="/"

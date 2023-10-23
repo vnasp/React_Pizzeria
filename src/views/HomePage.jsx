@@ -13,7 +13,7 @@ const HomePage = () => {
                 <Col className="text-center">
                     <Link to="/pizzas">
                         <img
-                            src="../src/assets/img/banner.jpg"
+                            src="../assets/img/banner.jpg"
                             alt="Las mejores pizzas"
                         />
                     </Link>

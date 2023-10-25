@@ -10,7 +10,7 @@ import NotFound from "./views/NotFound"
 const App = () => {
   return (
     <div>
-      <Navigation />
+      <Navigation/>
       <Routes>
         <Route
           path="/"

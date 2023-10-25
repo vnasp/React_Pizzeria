@@ -3,7 +3,7 @@ import PizzaMenu from "../components/PizzaMenu"
 
 const PizzaPage = () => {
     return (
-        <Container className="p-container">
+        <Container className="padding-custom">
             <Row className="mb-3">
                 <Col className="text-center">
                     <h1>Elige tu pizza</h1>

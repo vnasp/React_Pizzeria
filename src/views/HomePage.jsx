@@ -1,24 +1,15 @@
 import { Container, Row, Col } from "react-bootstrap"
-import { Link } from "react-router-dom"
 import PizzaMenu from "../components/PizzaMenu"
 
 const HomePage = () => {
     return (
-        <> <Container className="p-container">
+        <> <Container className="padding-custom">
             <Row className="mb-3">
-                <Col className="text-center"> <h1>¡Pizzería Mamma Mia!</h1>
-                    <h3>¡Tenemos las mejores pizzas que podrás encontrar!</h3></Col>
-            </Row>
-            <Row className="mb-3">
-                <Col className="text-center">
-                    <Link to="/pizzas">
-                        <img
-                            src="../assets/img/banner.jpg"
-                            alt="Las mejores pizzas"
-                        />
-                    </Link>
-
-                </Col>
+                <Col className="text-left text-white img-bg rounded">
+                    <div id="texto">
+                      <h1>Pizzería Mamma Mia</h1>
+                    <h3>¡Tenemos las mejores pizzas que podrás encontrar!</h3>
+                    </div></Col>
             </Row>
             <PizzaMenu />
         </Container>

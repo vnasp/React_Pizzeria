@@ -4,7 +4,7 @@ import PizzaCard from "../components/PizzaDetail"
 const PizzaPage = () => {
     return (
         <>
-            <Container className="p-container">
+            <Container className="padding-custom">
                 <Row className="mb-3">
                     <Col className="text-center">
                         <h1>Conoce más de nuestras pizzas</h1>

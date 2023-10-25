@@ -10,8 +10,8 @@ const Navigation = () => {
   return (
     <>
       {[false, 'sm', 'md', 'lg', 'xl', 'xxl'].map((expand) => (
-        <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-3">
-          <Container fluid>
+        <Navbar key={expand} expand={expand} className="bg-body-tertiary fixed-top">
+          <Container fluid style={{width:'90%'}}>
             <Navbar.Brand href="#"><Image src="../assets/img/logo.png" /><span className="logo-text">PIZZAS</span></Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas

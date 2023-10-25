@@ -3,7 +3,7 @@ import { Container, Row, Col, Image } from "react-bootstrap"
 const NotFound = () => {
   return (
     <>
-      <Container className="p-container">
+      <Container className="padding-custom">
         <Row className="mb-3">
           <Col className="text-center">
             <h1>¡Alguien se ha comido esta página!</h1>

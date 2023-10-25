@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #f5f5f5;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -87,13 +87,22 @@ button:focus-visible {
 }
 .padding-custom {
   padding-top:6.5rem;
-
 }
-@media screen and (max-width: 400px) {
-  h1 {
+#pizza_img{
+  width:100%;
+  height:auto;
+}
+@media screen and (max-width: 500px) {
+  #title_home h1 {
     font-size:14px;
   }
-  h3 {
+  #title_home h3 {
     font-size:14px;
+  }
+  #pizza_card {
+    flex-direction: column!important;
+  }
+  #cart_page {
+    flex-direction: column!important;
   }
 }

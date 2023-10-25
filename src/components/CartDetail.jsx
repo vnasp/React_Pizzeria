@@ -1,5 +1,5 @@
 import { useContext,useRef } from "react"
-import { Row, Col, Table, Image, Button, Form } from "react-bootstrap"
+import { Table, Image, Button, Form } from "react-bootstrap"
 import { DataContext } from "../context/DataContext"
 
 const CartDetail = () => {
@@ -36,16 +36,16 @@ const CartDetail = () => {
 
   return (
     <>
-      <Row className="mb-3 justify-content-between">
-        <Col className="col-8 p-3 border rounded bg-white">
-          <Table>
+      <div id="cart_page" className="m-2 justify-content-between d-flex flex-div">
+        <div className="div-8 p-3 border rounded bg-white mb-3">
+          <Table className="w-100">
             <thead>
               <tr>
                 <th className="w-25"></th>
                 <th className="w-100">Pizza</th>
                 <th className="w-50">Subtotal</th>
                 <th className="w-25"></th>
-                <th className="w-50">Cantidad</th>
+                <th className="w-25">Cant.</th>
                 <th className="w-25"></th>
               </tr>
             </thead>
@@ -62,25 +62,25 @@ const CartDetail = () => {
               ))}
             </tbody>
           </Table>
-        </Col>
-        <Col className="col-1 border-0"></Col>
-        <Col className="col-3 p-3 border rounded bg-white text-center">
+        </div>
+        <div className="div-1 border-0"></div>
+        <div className="div-3 p-3 border rounded bg-white text-center">
           <div className="fw-bolder me-3 pb-3 border-bottom">
             <Form onSubmit={handleSubmit}>
               <h5>Cupón de Descuento</h5>
               <input ref={inputRef} type="text" className="me-2" style={{ width: '50%' }}></input>
-              <Button className="bg-grey border-0" onClick={handleClick}>Canjear</Button>
+              <Button className="border-0" onClick={handleClick}>Canjear</Button>
             </Form>
           </div>
           <div className="fw-bolder fs-2 mb-3 text-center">Total: {CLP.format(total)}</div>
-          <div className="text-center"><Button className="bg-success border-0" type="button" href="#">Ir a pagar</Button></div>
-        </Col>
-      </Row>
-      <Row className="border rounded bg-white text-center">
-        <Col className="col-12 p-3 fw-bolder">
+          <div className="text-center"><Button className="bg-warning border-0" type="button" href="#">Ir a pagar</Button></div>
+        </div>
+      </div>
+      <div className="border rounded bg-white text-center m-2">
+        <div className="div-12 p-3 fw-bolder">
           ¡Con esta compra acumularás {cart_mamapuntos} 🧑🏼‍🍳 MamaPuntos!
-        </Col>
-      </Row>
+        </div>
+      </div>
     </>
   )
 }

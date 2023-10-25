@@ -5,8 +5,8 @@ const HomePage = () => {
     return (
         <> <Container className="padding-custom">
             <Row className="mb-3">
-                <Col className="text-left text-white img-bg rounded">
-                    <div id="texto">
+                <Col className="text-left text-white img-bg rounded m-3">
+                    <div id="title_home">
                       <h1>Pizzería Mamma Mia</h1>
                     <h3>¡Tenemos las mejores pizzas que podrás encontrar!</h3>
                     </div></Col>

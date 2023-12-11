@@ -10,7 +10,7 @@ const Navigation = () => {
   return (
     <Navbar expand="lg" className="navbar-light d-flex justify-content-between">
       <Container>
-        <Navbar.Brand href="#home"><h1><Image src="/logo.png" id="logo" /><span id="logo-text" className="logo-text">PIZZAS</span></h1></Navbar.Brand>
+        <Navbar.Brand href="#home"><h1><Image src="/assets/img/logo.png" id="logo" /><span id="logo-text" className="logo-text">PIZZAS</span></h1></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto d-flex justify-content-around bg-white rounded shadow-sm p-3 w-75 align-self-center">

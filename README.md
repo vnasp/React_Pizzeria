@@ -7,3 +7,4 @@
 * Javascript
 * Consumo de API JSON
 * Boostrap y CSS personalizado
+* Deploy http://react-pizzeria.netlify.app

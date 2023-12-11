@@ -9,13 +9,14 @@ const PizzaMenu = () => {
     const navigate = useNavigate()
 
     const handleSubmit = (e) => {
+      
         e.preventDefault()
         navigate(`/pizza/${pizzaSelected}/`)
     }
 
     return (
         <Form onSubmit={handleSubmit}>
-            <Row xs={1} md={4} className="g-4">
+            <Row xs={1} md={2} lg={4} className="g-4">
                 {pizzas.map((pizza) => (
                     <Col key={pizza.id}>
                         <Card>
@@ -36,7 +37,7 @@ const PizzaMenu = () => {
                             <Card.Text className="fw-bolder fs-2 text-center">{CLP.format(pizza.price)}
                             </Card.Text>
                         </Card.Body>
-                        <Card.Body className="d-flex justify-content-around">
+                        <Card.Body className="d-flex justify-content-around" id="PizzaButons">
                             <Button className="bg-primary" type="submit" value={pizza.id} onClick={({ target }) => setPizzaSelected(target.value)}>Ver Más 👀</Button>
                             <Button className="bg-warning border-0 text-black" type="button" value={pizza.id} onClick={(e) => addToCart(e, 'value')}>Añadir 🛒</Button>
                         </Card.Body>

@@ -36,8 +36,8 @@ const CartDetail = () => {
 
   return (
     <>
-      <div id="cart_page" className="m-2 justify-content-between d-flex flex-div">
-        <div className="div-8 p-3 border rounded bg-white mb-3">
+      <div id="cart_page" className="m-2 justify-content-between d-flex flex-div gap-1">
+        <div className="p-3 border rounded bg-white mb-3">
           <Table className="w-100">
             <thead>
               <tr>
@@ -63,13 +63,15 @@ const CartDetail = () => {
             </tbody>
           </Table>
         </div>
-        <div className="div-1 border-0"></div>
-        <div className="div-3 p-3 border rounded bg-white text-center">
+        <div className="border-0"></div>
+        <div className="p-3 border rounded bg-white text-center">
           <div className="fw-bolder me-3 pb-3 border-bottom">
             <Form onSubmit={handleSubmit}>
               <h5>Cupón de Descuento</h5>
+              <div className="d-flex">
               <input ref={inputRef} type="text" className="me-2" style={{ width: '50%' }}></input>
               <Button className="border-0" onClick={handleClick}>Canjear</Button>
+              </div>
             </Form>
           </div>
           <div className="fw-bolder fs-2 mb-3 text-center">Total: {CLP.format(total)}</div>

@@ -36,7 +36,7 @@ const CartDetail = () => {
 
   return (
     <>
-      <div id="cart_page" className="m-2 justify-content-between d-flex flex-div gap-1">
+      <div id="cart_page" className="mt-2 justify-content-between d-flex flex-div gap-1">
         <div className="p-3 border rounded bg-white mb-3">
           <Table className="w-100">
             <thead>
@@ -63,12 +63,12 @@ const CartDetail = () => {
             </tbody>
           </Table>
         </div>
-        <div className="border-0"></div>
-        <div className="p-3 border rounded bg-white text-center">
-          <div className="fw-bolder me-3 pb-3 border-bottom">
+       
+        <div id="coupon-box" className="p-3 border rounded bg-white text-center">
+          <div className="fw-bolder pb-3 border-bottom">
             <Form onSubmit={handleSubmit}>
               <h5>Cupón de Descuento</h5>
-              <div className="d-flex">
+              <div className="d-flex justify-content-center">
               <input ref={inputRef} type="text" className="me-2" style={{ width: '50%' }}></input>
               <Button className="border-0" onClick={handleClick}>Canjear</Button>
               </div>

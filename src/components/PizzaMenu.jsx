@@ -29,7 +29,7 @@ const PizzaMenu = () => {
                                 <Card.Subtitle>Ingredientes:</Card.Subtitle>
                             <ListGroup className="text-capitalize border-0">
                                     {pizza.ingredients.map((ingredient, index) => (
-                                    <ListGroup.Item className="border-0" key={index}> 🍕{ingredient}</ListGroup.Item>
+                                    <ListGroup.Item className="border-0" key={index}> 🍕 {ingredient}</ListGroup.Item>
                                     ))}
                             </ListGroup>
                         </Card.Body>
@@ -38,8 +38,8 @@ const PizzaMenu = () => {
                             </Card.Text>
                         </Card.Body>
                         <Card.Body className="d-flex justify-content-around" id="PizzaButons">
-                            <Button className="bg-primary" type="submit" value={pizza.id} onClick={({ target }) => setPizzaSelected(target.value)}>Ver Más 👀</Button>
-                            <Button className="bg-warning border-0 text-black" type="button" value={pizza.id} onClick={(e) => addToCart(e, 'value')}>Añadir 🛒</Button>
+                            <Button className="bg-primary mb-1" type="submit" value={pizza.id} onClick={({ target }) => setPizzaSelected(target.value)}>Ver Más 👀</Button>
+                            <Button className="bg-warning border-0 text-black mb-1" type="button" value={pizza.id} onClick={(e) => addToCart(e, 'value')}>Añadir 🛒</Button>
                         </Card.Body>
                     </Card>
                     </Col>

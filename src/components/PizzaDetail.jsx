@@ -17,7 +17,7 @@ const PizzaCard = () => {
 
     return (
         <>
-            <div id="pizza_card" key={pizzas[pizzaIndex].id} className="border rounded bg-white align-items-start d-flex flex-row mb-3">
+            <div id="pizza_card" key={pizzas[pizzaIndex].id} className="border rounded bg-white align-items-start d-flex mb-3">
                 <div>
                     <Image src={pizzas[pizzaIndex].img} id="pizza_img" />
                 </div>

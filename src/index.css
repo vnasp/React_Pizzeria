@@ -76,33 +76,50 @@ button:focus-visible {
 }
 
 .img-bg {
-  background-image:url('../assets/img/banner.jpg');
-  background-size:cover;
+  background-image: url('../assets/img/banner.jpg');
+  background-size: cover;
   background-position: center center;
-  background-repeat:no-repeat;
-  padding:4rem;
+  background-repeat: no-repeat;
+  padding: 4rem;
 }
+
 .bg-custom {
   background-color: #f5f5f5;
 }
-.padding-custom {
-  padding-top:6.5rem;
+
+#pizza_img {
+  width: 100%;
+  height: auto;
 }
-#pizza_img{
-  width:100%;
-  height:auto;
-}
-@media screen and (max-width: 500px) {
-  #title_home h1 {
-    font-size:14px;
-  }
-  #title_home h3 {
-    font-size:14px;
-  }
-  #pizza_card {
-    flex-direction: column!important;
-  }
+
+@media (max-width: 992px) {
+  #PizzaButons,
+  #pizza_card,
   #cart_page {
-    flex-direction: column!important;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #coupon-box {
+    width: 100%;
+  }
+
+  #logo {
+    width: 25%;
+  }
+
+  #logo-text {
+    font-size: 2rem;
+  }
+
+  #carrito {
+    padding: 0.75rem;
+  }
+
+  h1 {
+    font-size: 1.75em;
+  }
+  h3 {
+    font-size: 1em;
   }
 }
